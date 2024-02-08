@@ -1,13 +1,16 @@
-import { Link, LinkProps } from "expo-router"
+import { Link, LinkProps } from 'expo-router'
 
 type LinkButtonProps = LinkProps<string> & {
-	title: string
+    title: string
 }
 
 export const LinkButton = ({ title, ...rest }: LinkButtonProps) => {
-	return (
-		<Link className="text-slate-300 text-center text-base font-body" {...rest}>
-			{title}
-		</Link>
-	)
+    return (
+        <Link
+            className="text-slate-300 text-center text-base font-body"
+            {...rest}
+        >
+            {title}
+        </Link>
+    )
 }

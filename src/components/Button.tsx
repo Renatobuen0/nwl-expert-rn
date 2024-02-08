@@ -1,31 +1,35 @@
-import { ReactNode } from "react"
-import { TouchableOpacity, TouchableOpacityProps, Text } from "react-native"
+import { ReactNode } from 'react'
+import { TouchableOpacity, TouchableOpacityProps, Text } from 'react-native'
 
 type ButtonProps = TouchableOpacityProps & {
-	children: ReactNode
+    children: ReactNode
 }
 
 type ButtonTextProps = { children: ReactNode }
 type ButtonIconProps = { children: ReactNode }
 
 const Button = ({ children, ...rest }: ButtonProps) => {
-	return (
-		<TouchableOpacity
-			{...rest}
-			className="h-12 bg-lime-400 rounded-md items-center justify-center flex-row"
-			activeOpacity={0.7}
-		>
-			{children}
-		</TouchableOpacity>
-	)
+    return (
+        <TouchableOpacity
+            {...rest}
+            className="h-12 bg-lime-400 rounded-md items-center justify-center flex-row"
+            activeOpacity={0.7}
+        >
+            {children}
+        </TouchableOpacity>
+    )
 }
 
 const ButtonText = ({ children }: ButtonTextProps) => {
-	return <Text className="text-black font-heading text-base mx-2">{children}</Text>
+    return (
+        <Text className="text-black font-heading text-base mx-2">
+            {children}
+        </Text>
+    )
 }
 
 const ButtonIcon = ({ children }: ButtonIconProps) => {
-	return children
+    return children
 }
 
 Button.Text = ButtonText
